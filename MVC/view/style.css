@@ -21,7 +21,7 @@ header{
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(199,181,159,1) 34%, rgba(75,54,33,1) 97%);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+
 }
 nav {
 
@@ -35,8 +35,8 @@ nav {
 }
 
 .logo{
-    width: 30px;
-    margin-left: 20px;
+    width: 40px;
+    margin-left: 1000px;
 }
 .bar-btn{
     font-size: 25px;
@@ -49,7 +49,7 @@ nav {
     position: fixed;
     width: 100%;
     height: 0vh;
-    top: 100px;
+    top: 10px;
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(199,181,159,1) 34%, rgba(75,54,33,1) 97%);
     text-align: center;
@@ -69,7 +69,7 @@ nav {
 .nav-menu li a.activate,
 .nav-menu li a:hover{
     color: #9900ff;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 #check{
     display: none;
@@ -155,67 +155,90 @@ nav {
 
 }
 
-.css-button-sliding-to-left--green {
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 15px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    outline: none;
-    border-radius: 5px;
-    z-index: 0;
-    background: #fff;
-    overflow: hidden;
-    border: 2px solid #57cc99;
-    color: #57cc99;
-}
-.css-button-sliding-to-left--green:hover {
-    color: #fff;
-}
-.css-button-sliding-to-left--green:hover:after {
-    width: 100%;
-}
-.css-button-sliding-to-left--green:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    transition: all 0.3s ease;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 100%;
-    background: #57cc99;
-}
-.comida{
-    width: 100%;
-    height: 50vh;
-    align-items:center ;
-    display: flex;
-    place-content: block;
-}
 .food{
-    margin-left: 40px;
-    line-height: 100%;
-    width: 200px;
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
 }
-.kodfun-galeri {
+.carrusel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate360 60s infinite forwards linear;
+}
+.image{
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0,5);
     display: flex;
-    height: 20rem;
-    gap: 1rem;
+
 }
-.kodfun-galeri > div{
-    flex: 1;
-    border-radius: 2rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    transition: all .8s cubic-bezier(.25, .4, .45, 1,4);
+span{
+    margin: auto;
+    font-size: 2rem;
 }
-.kodfun-galeri > div:hover{
-    flex: 5;
+@keyframes rotate360{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(-360deg);
+    }
+}
+.image:nth-child(1){
+    background-image: url("/MVC/view/images/china.png");
+    transform: rotateY(0deg) translateZ(430px);
+
+}
+.image:nth-child(2){
+    background-image: url("/MVC/view/images/paisa.png");
+    transform: rotateY(40deg) translateZ(430px);
+
+}
+.image:nth-child(3){
+    background-image: url("/MVC/view/images/japonesa.png");
+    transform: rotateY(80deg) translateZ(430px);
+}
+.image:nth-child(4){
+    background-image: url("/MVC/view/images/mexicana.png");
+    transform: rotateY(120deg) translateZ(430px);
+
+}
+.image:nth-child(5){
+    background-image: url("/MVC/view/images/ramen.png");
+    transform: rotateY(160deg) translateZ(430px);
+
+}
+.image:nth-child(6){
+    background-image: url("/MVC/view/images/india.png");
+    transform: rotateY(200deg) translateZ(430px);    
+}
+.image:nth-child(7){
+    background-image: url("/MVC/view/images/fondo-nav.png");
+    transform: rotateY(240deg) translateZ(430px);
+
+}
+.image:nth-child(8){
+    background-image: url("/MVC/view/images/fondo.png");
+    transform: rotateY(280deg) translateZ(430px);
+
+}
+.image:nth-child(9){
+    background-image: url("/MVC/view/images/World\ Food.jpg");
+    transform: rotateY(320deg) translateZ(430px);
+
+}
+.image:nth-child(10){
+    background-image: url("/MVC/view/images/paisa.png");
+    transform: rotateY(360deg) translateZ(430px);
+
 }
 @media (min-width: 600px){
     main{
